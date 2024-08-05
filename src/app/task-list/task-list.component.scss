@@ -1,0 +1,32 @@
+.tableHeader{
+    background-color: rgb(232, 232, 232);
+}
+
+.tableData{
+    height: 100%;
+    width: 100%;
+    text-align: -webkit-center;
+    margin-top: 2%;
+}
+
+.tableResponsive{
+    width: 70%;
+    text-align: center;
+}
+
+.tHeader{
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 20px;
+}
+
+
+.tBodyData{
+    padding: 10px;
+    font-size: 17px;
+}
+
+.deleteBtn{
+    background-color: red;
+    color: white;
+}

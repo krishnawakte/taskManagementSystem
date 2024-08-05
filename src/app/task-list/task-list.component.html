@@ -1,0 +1,57 @@
+<div class="tableData">
+    <table class="tableResponsive">
+        <thead>
+        <tr class="tableHeader">
+            <th class="tHeader">Sr.No.</th>
+            <th class="tHeader">Title</th>
+            <th class="tHeader">Status</th>
+            <th class="tHeader">Priority</th>
+            <th class="tHeader">Due Date</th>
+            <th class="tHeader">Actions</th>
+        </tr>
+    </thead>
+        <tbody>
+            <tr class="tBodyHeader" *ngFor="let task of data; let i = index" (click)="selectTask(task)">
+                <td class="tBodyData">{{task.id}}</td>
+                <td class="tBodyData">{{task.title}}</td>
+                <td class="tBodyData">{{task.status}}</td>
+                <td class="tBodyData">{{task.priority}}</td>
+                <td class="tBodyData">{{task.dueDate}}</td>
+                <td class="tBodyData">
+                    <app-button type="submit" [btnLable]="'Delete'" (click)="deleteTask(i)"></app-button>
+
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <app-button type="submit" [btnLable]="'Create Task'" (click)="showForm = true"></app-button>
+
+    <div *ngIf="showForm">
+        <form (ngSubmit)="createTask()">
+            <div>
+                <label for="title">Title:</label>
+                <input type="text" id="title" name="title" [(ngModel)]="newTask.title">
+            </div>
+
+            <div>
+                <label for="status">Status:</label>
+                <input type="text" id="status"  name="status" [(ngModel)]="newTask.status">
+            </div>
+
+            <div>
+                <label for="priority">Priority:</label>
+                <input type="text" id="priority" name="priority" [(ngModel)]="newTask.priority">
+            </div>
+
+            <div>
+                <label for="dueDate">Due Date:</label>
+                <input type="date" id="dueDate"  name="dueDate" [(ngModel)]="newTask.dueDate">
+            </div>
+
+            <div>
+                <app-button type="submit" [btnLable]="'Create Task'"></app-button>
+                <app-button type="button" [btnLable]="'Cancel'"  (click)="showForm = false"></app-button>
+            </div>
+        </form>
+    </div>
+</div>

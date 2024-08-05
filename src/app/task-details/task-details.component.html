@@ -1,0 +1,24 @@
+<div class="taskUpdateForm">
+    <form [formGroup]="taskForm" (ngSubmit)="onSubmit()" class="taskForm">
+        <div class="editField">
+            <label class="custumLable">Title </label>
+            <input class="inputField" type="text" formControlName="title">
+        </div>
+        <div class="editField">
+            <label class="custumLable">Status</label>
+            <input class="inputField" type="text" formControlName="status">
+        </div>
+        <div class="editField">
+            <label class="custumLable">Priority</label>
+            <input class="inputField" type="text" formControlName="priority">
+        </div>
+        <div class="editField">
+            <label class="custumLable">Due Date</label>
+            <input class="inputField" type="date" formControlName="dueDate">
+        </div>
+        <div class="editField">
+            <app-button type="submit" [btnLable]="'Update Data'"></app-button>
+        </div>
+      </form>
+</div>
+
